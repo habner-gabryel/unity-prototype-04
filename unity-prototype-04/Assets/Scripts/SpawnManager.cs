@@ -5,10 +5,16 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    private float spawnRange = 10;
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(enemyPrefab, new Vector3(0, 0, 6), enemyPrefab.transform.rotation);
+        float xRand = Random.Range(-spawnRange, spawnRange);
+        float zRand = Random.Range(-spawnRange, spawnRange);
+
+        Vector3 randomPos = new(xRand, 0.12F, zRand);
+
+        Instantiate(enemyPrefab, randomPos, enemyPrefab.transform.rotation);
     }
 
     // Update is called once per frame
