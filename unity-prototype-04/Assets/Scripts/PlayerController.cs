@@ -22,6 +22,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision){
+        if(collision.gameObject.CompaerTag("Enemy") && hasPowered){
+            
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
