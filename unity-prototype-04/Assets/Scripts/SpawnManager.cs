@@ -9,8 +9,13 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        SpawnEnemyWave();
+    }
+
+    void SpawnEnemyWave(){
+        for (int i = 0; i < 4; i++){
+            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        }
     }
 
     Vector3 GenerateSpawnPosition(){
